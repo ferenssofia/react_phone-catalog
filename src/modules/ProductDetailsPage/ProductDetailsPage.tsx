@@ -33,9 +33,9 @@ export const ProductDetailsPage: React.FC = () => {
     setLoading(true);
 
     Promise.all([
-      fetch('/api/phones.json').then(r => (r.ok ? r.json() : [])),
-      fetch('/api/tablets.json').then(r => (r.ok ? r.json() : [])),
-      fetch('/api/accessories.json').then(r => (r.ok ? r.json() : [])),
+      fetch('api/phones.json').then(r => (r.ok ? r.json() : [])),
+      fetch('api/tablets.json').then(r => (r.ok ? r.json() : [])),
+      fetch('api/accessories.json').then(r => (r.ok ? r.json() : [])),
     ])
       .then(([phones, tablets, accessories]) => {
         const allDetails: ProductDetails[] = [

@@ -10,7 +10,7 @@ export const Breadcrumbs: React.FC = () => {
     <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
       <Link to="/" className={styles.breadcrumbs__link}>
         <img
-          src="/img/icons/Home.svg"
+          src="./img/icons/Home.svg"
           alt="Home"
           className={styles.breadcrumbs__homeIcon}
         />

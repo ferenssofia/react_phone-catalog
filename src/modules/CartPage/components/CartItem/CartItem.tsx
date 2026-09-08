@@ -25,7 +25,7 @@ export const CartItem: React.FC<Props> = ({
           className={styles.cartItem__removeBtn}
           aria-label="Remove item"
         >
-          <img src="/img/icons/Close.svg" alt="Close" />
+          <img src="./img/icons/Close.svg" alt="Close" />
         </button>
         <img
           src={`/${product.image}`}

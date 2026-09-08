@@ -37,7 +37,7 @@ export const PicturesSlider: React.FC = () => {
           onClick={handlePrev}
           aria-label="Previous slide"
         >
-          <img src="/img/icons/Arrow-left.svg" alt="Left" />
+          <img src="./img/icons/Arrow-left.svg" alt="Left" />
         </button>
 
         <div className={styles.picturesSlider__wrapper}>
@@ -63,7 +63,7 @@ export const PicturesSlider: React.FC = () => {
           onClick={handleNext}
           aria-label="Next slide"
         >
-          <img src="/img/icons/Arrow-right.svg" alt="Right" />
+          <img src="./img/icons/Arrow-right.svg" alt="Right" />
         </button>
       </div>
 
