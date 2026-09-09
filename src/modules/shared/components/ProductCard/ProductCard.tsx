@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Product } from '../../../../types/Product';
 import { useCart } from '../../../../context/CartContext';
 import { useFavorites } from '../../../../context/FavoritesContext';
+import { getAssetUrl } from '../../../../utils/getAssetUrl'; // Перевірте правильність відносного шляху
 import styles from './ProductCard.module.scss';
 
 interface Props {
@@ -31,7 +32,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         className={styles.card__imageContainer}
       >
         <img
-          src={`/${product.image}`}
+          src={getAssetUrl(product.image)}
           alt={product.name}
           className={styles.card__image}
         />
@@ -87,7 +88,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           aria-label={favorite ? 'Remove from favorites' : 'Add to favorites'}
         >
           <img
-            src={favorite ? '/img/icons/Filled.svg' : '/img/icons/Heart.svg'}
+            src={getAssetUrl(
+              favorite ? 'img/icons/Filled.svg' : 'img/icons/Heart.svg',
+            )}
             alt="Favorite icon"
             className={styles.card__favIcon}
           />

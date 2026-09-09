@@ -1,10 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styles from './PicturesSlider.module.scss';
 
+// Імпортуємо картинки банерів напряму
+import bannerPhones from '/img/banner-phones.png';
+import bannerTablets from '/img/banner-tablets.png';
+import bannerAccessories from '/img/banner-accessories.png';
+
+// Імпортуємо іконки стрілок
+import arrowLeft from '/img/icons/Arrow-left.svg';
+import arrowRight from '/img/icons/Arrow-right.svg';
+
 const BANNER_IMAGES = [
-  { id: 1, src: '/img/banner-phones.png', alt: 'iPhone promotion' },
-  { id: 2, src: '/img/banner-tablets.png', alt: 'iPad promotion' },
-  { id: 3, src: '/img/banner-accessories.png', alt: 'Accessories promotion' },
+  { id: 1, src: bannerPhones, alt: 'iPhone promotion' },
+  { id: 2, src: bannerTablets, alt: 'iPad promotion' },
+  { id: 3, src: bannerAccessories, alt: 'Accessories promotion' },
 ];
 
 export const PicturesSlider: React.FC = () => {
@@ -37,7 +46,7 @@ export const PicturesSlider: React.FC = () => {
           onClick={handlePrev}
           aria-label="Previous slide"
         >
-          <img src="./img/icons/Arrow-left.svg" alt="Left" />
+          <img src={arrowLeft} alt="Left" />
         </button>
 
         <div className={styles.picturesSlider__wrapper}>
@@ -63,7 +72,7 @@ export const PicturesSlider: React.FC = () => {
           onClick={handleNext}
           aria-label="Next slide"
         >
-          <img src="./img/icons/Arrow-right.svg" alt="Right" />
+          <img src={arrowRight} alt="Right" />
         </button>
       </div>
 

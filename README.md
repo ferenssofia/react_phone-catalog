@@ -1,4 +1,4 @@
-# React Product Catalog
+# React Product Catalg
 
 Implement the catalog with a shopping cart and favorites page according to one of the next designs:
 

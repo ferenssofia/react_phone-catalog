@@ -34,7 +34,7 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
             className={styles.slider__btn}
             aria-label="Previous products"
           >
-            <img src="./img/icons/Arrow-left.svg" alt="Left" />
+            <img src="img/icons/Arrow-left.svg" alt="Left" />
           </button>
           <button
             type="button"
@@ -42,7 +42,7 @@ export const ProductsSlider: React.FC<Props> = ({ title, products }) => {
             className={styles.slider__btn}
             aria-label="Next products"
           >
-            <img src="./img/icons/Arrow-right.svg" alt="Right" />
+            <img src="img/icons/Arrow-right.svg" alt="Right" />
           </button>
         </div>
       </div>

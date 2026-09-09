@@ -42,7 +42,7 @@ export const Header = () => {
         <div className={styles.header__left}>
           <NavLink to="/" className={styles.header__logo} onClick={closeMenu}>
             <img
-              src="./img/icons/Logo.svg"
+              src="img/icons/Logo.svg"
               alt="Nice Gadgets Logo"
               className={styles.header__logoImg}
             />
@@ -69,7 +69,7 @@ export const Header = () => {
           <div className={styles.header__desktopActions}>
             <NavLink to="/favorites" className={getActionClass}>
               <img
-                src="./img/icons/Favourites.svg"
+                src="img/icons/Favourites.svg"
                 alt="Favorites"
                 className={styles.header__icon}
               />
@@ -79,7 +79,7 @@ export const Header = () => {
             </NavLink>
             <NavLink to="/cart" className={getActionClass}>
               <img
-                src="./img/icons/Cart.svg"
+                src="img/icons/Cart.svg"
                 alt="Cart"
                 className={styles.header__icon}
               />
@@ -134,7 +134,7 @@ export const Header = () => {
               onClick={closeMenu}
             >
               <img
-                src="./img/icons/Favourites.svg"
+                src="img/icons/Favourites.svg"
                 alt="Favorites"
                 className={styles.header__icon}
               />
@@ -144,7 +144,7 @@ export const Header = () => {
             </NavLink>
             <NavLink to="/cart" className={getActionClass} onClick={closeMenu}>
               <img
-                src="./img/icons/Cart.svg"
+                src="img/icons/Cart.svg"
                 alt="Cart"
                 className={styles.header__icon}
               />

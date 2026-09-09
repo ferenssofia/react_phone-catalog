@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Product } from '../../../../types/Product';
+import { getAssetUrl } from '../../../../utils/getAssetUrl'; // Перевірте шлях до utils
 import styles from './CartItem.module.scss';
 
 interface Props {
@@ -25,10 +26,10 @@ export const CartItem: React.FC<Props> = ({
           className={styles.cartItem__removeBtn}
           aria-label="Remove item"
         >
-          <img src="./img/icons/Close.svg" alt="Close" />
+          <img src={getAssetUrl('img/icons/Close.svg')} alt="Close" />
         </button>
         <img
-          src={`/${product.image}`}
+          src={getAssetUrl(product.image)}
           alt={product.name}
           className={styles.cartItem__img}
         />
