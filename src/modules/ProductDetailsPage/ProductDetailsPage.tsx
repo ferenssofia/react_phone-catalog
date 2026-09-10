@@ -10,6 +10,7 @@ import { ImageGallery } from './components/ImageGallery';
 import { TechSpecs } from './components/TechSpecs';
 import { useCart } from '../../context/CartContext';
 import { useFavorites } from '../../context/FavoritesContext';
+import { getAssetUrl } from '../../utils/getAssetUrl';
 import styles from './ProductDetailsPage.module.scss';
 
 export const ProductDetailsPage: React.FC = () => {
@@ -30,12 +31,17 @@ export const ProductDetailsPage: React.FC = () => {
       return;
     }
 
+    // Плавне скролення догори при зміні товару в URL
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     setLoading(true);
 
     Promise.all([
-      fetch('api/phones.json').then(r => (r.ok ? r.json() : [])),
-      fetch('api/tablets.json').then(r => (r.ok ? r.json() : [])),
-      fetch('api/accessories.json').then(r => (r.ok ? r.json() : [])),
+      fetch(getAssetUrl('api/phones.json')).then(r => (r.ok ? r.json() : [])),
+      fetch(getAssetUrl('api/tablets.json')).then(r => (r.ok ? r.json() : [])),
+      fetch(getAssetUrl('api/accessories.json')).then(r =>
+        r.ok ? r.json() : [],
+      ),
     ])
       .then(([phones, tablets, accessories]) => {
         const allDetails: ProductDetails[] = [
@@ -51,6 +57,7 @@ export const ProductDetailsPage: React.FC = () => {
       // eslint-disable-next-line no-console
       .catch(console.error)
       .finally(() => setLoading(false));
+
     // eslint-disable-next-line no-console
     getProducts().then(setAllProducts).catch(console.error);
   }, [productId]);
@@ -64,6 +71,13 @@ export const ProductDetailsPage: React.FC = () => {
   }
 
   const currentProduct = allProducts.find(p => p.itemId === productId);
+  const category = currentProduct?.category || 'phones';
+
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate(`/${category}`);
+  };
+
   const inCart = currentProduct
     ? cart.some(item => item.id === currentProduct.itemId)
     : false;
@@ -83,13 +97,11 @@ export const ProductDetailsPage: React.FC = () => {
 
   return (
     <div className={styles.details}>
-      <Breadcrumbs />
+      <Breadcrumbs category={category} productName={productDetails.name} />
+
       <a
-        href="#back"
-        onClick={e => {
-          e.preventDefault();
-          navigate(-1);
-        }}
+        href={`/${category}`}
+        onClick={handleBack}
         className={styles.details__back}
       >
         &lt; Back
@@ -178,9 +190,9 @@ export const ProductDetailsPage: React.FC = () => {
               className={styles.details__favBtn}
             >
               <img
-                src={
-                  favorite ? '/img/icons/Heart.svg' : '/img/icons/Filled.svg'
-                }
+                src={getAssetUrl(
+                  favorite ? 'img/icons/Filled.svg' : 'img/icons/Heart.svg',
+                )}
                 alt="Favorite"
               />
             </button>

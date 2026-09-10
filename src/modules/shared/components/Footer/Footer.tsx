@@ -22,7 +22,7 @@ export const Footer = () => {
 
         <nav className={styles.footer__nav}>
           <a
-            href="https://github.com"
+            href="https://github.com/ferenssofia/react_phone-catalog"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.footer__link}
@@ -30,7 +30,7 @@ export const Footer = () => {
             Github
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/ferenssofia"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.footer__link}
@@ -38,7 +38,7 @@ export const Footer = () => {
             Contacts
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/ferenssofia/react_phone-catalog#readme"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.footer__link}
